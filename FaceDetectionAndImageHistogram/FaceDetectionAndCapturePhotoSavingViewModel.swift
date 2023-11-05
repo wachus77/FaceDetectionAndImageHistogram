@@ -11,7 +11,7 @@ protocol FaceDetectionAndCapturePhotoSavingViewModelProtocol: FaceDetectionViewM
     func setupPhotoOutput()
     func setupVideoOutput(delegate: AVCaptureVideoDataOutputSampleBufferDelegate)
     func takePicture(delegate: AVCapturePhotoCaptureDelegate)
-    func handleTakenPhoto(photo: AVCapturePhoto)
+    func createFaceImageAndHistogram(photo: AVCapturePhoto) async -> (takenImage: UIImage?, histogram: UIImage?)
 }
 
 class FaceDetectionAndCapturePhotoSavingViewModel: FaceDetectionAndPixelBufferSavingViewModel, FaceDetectionAndCapturePhotoSavingViewModelProtocol {
@@ -37,13 +37,14 @@ class FaceDetectionAndCapturePhotoSavingViewModel: FaceDetectionAndPixelBufferSa
         photoDataOutput.capturePhoto(with: settings, delegate: delegate)
     }
     
-    func handleTakenPhoto(photo: AVCapturePhoto) {
-        guard self.takenFaceImage == nil else { return }
-        guard let imageData = photo.fileDataRepresentation() else { return }
-        guard let image = UIImage(data: imageData) else { return }
+    func createFaceImageAndHistogram(photo: AVCapturePhoto) async -> (takenImage: UIImage?, histogram: UIImage?) {
+        guard self.takenFaceImage == nil else { return (nil, nil) }
+        guard let imageData = photo.fileDataRepresentation() else { return (nil, nil)  }
+        guard let image = UIImage(data: imageData) else { return (nil, nil)  }
         self.takenFaceImage = image
         if let histogramImage = openCVService.generateColorHistogram(for: image) {
-            imageProcessedPublisher.send((image, histogramImage))
+            return (image, histogramImage)
         }
+        return (nil, nil)
     }
 }

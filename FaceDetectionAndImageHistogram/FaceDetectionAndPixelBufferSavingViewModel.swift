@@ -11,7 +11,7 @@ import Combine
 
 protocol FaceDetectionAndPixelBufferSavingViewModelProtocol: FaceDetectionViewModelGeneralProtocol {
     func setupVideoOutput(delegate: AVCaptureVideoDataOutputSampleBufferDelegate)
-    func saveFaceImage(pixelBuffer: CVPixelBuffer, detectionOverlayLayerBoundingBox: CGRect, previewLayer: AVCaptureVideoPreviewLayer)
+    func createFaceImageAndHistogram(pixelBuffer: CVPixelBuffer, detectionOverlayLayerBoundingBox: CGRect, previewLayer: AVCaptureVideoPreviewLayer) async -> (takenImage: UIImage?, histogram: UIImage?)
 }
 
 class FaceDetectionAndPixelBufferSavingViewModel: FaceDetectionViewModel, FaceDetectionAndPixelBufferSavingViewModelProtocol {
@@ -42,8 +42,8 @@ class FaceDetectionAndPixelBufferSavingViewModel: FaceDetectionViewModel, FaceDe
         connection.videoOrientation = .portrait
     }
     
-    func saveFaceImage(pixelBuffer: CVPixelBuffer, detectionOverlayLayerBoundingBox: CGRect, previewLayer: AVCaptureVideoPreviewLayer) {
-        guard self.takenFaceImage == nil else { return }
+    func createFaceImageAndHistogram(pixelBuffer: CVPixelBuffer, detectionOverlayLayerBoundingBox: CGRect, previewLayer: AVCaptureVideoPreviewLayer) async -> (takenImage: UIImage?, histogram: UIImage?) {
+        guard self.takenFaceImage == nil else { return (nil, nil) }
         
         let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
         let context = CIContext()
@@ -56,8 +56,9 @@ class FaceDetectionAndPixelBufferSavingViewModel: FaceDetectionViewModel, FaceDe
             let faceCrop = UIImage(cgImage: cgImage, scale: 1, orientation: .upMirrored)
             self.takenFaceImage = faceCrop
             if let histogramImage = openCVService.generateColorHistogram(for: faceCrop) {
-                imageProcessedPublisher.send((faceCrop, histogramImage))
+                return (faceCrop, histogramImage)
             }
         }
+        return (nil, nil)
     }
 }

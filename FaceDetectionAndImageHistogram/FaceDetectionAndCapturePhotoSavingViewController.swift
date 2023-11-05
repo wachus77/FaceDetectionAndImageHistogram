@@ -109,6 +109,10 @@ extension FaceDetectionAndCapturePhotoSavingViewController: AVCapturePhotoCaptur
             print("Error capturing photo: \(String(describing: error))")
             return
         }
-        viewModel.handleTakenPhoto(photo: photo)
+        Task {
+            let (takenImage, histogramImage) = await viewModel.createFaceImageAndHistogram(photo: photo)
+            guard let takenImage = takenImage, let histogramImage = histogramImage else { return }
+            viewModel.imageProcessedPublisher.send((takenImage, histogramImage))
+        }
     }
 }
