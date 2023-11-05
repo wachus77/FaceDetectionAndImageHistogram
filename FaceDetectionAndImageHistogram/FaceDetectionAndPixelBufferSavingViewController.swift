@@ -79,9 +79,7 @@ class FaceDetectionAndPixelBufferSavingViewController: BaseViewController<FaceDe
             let detectionOverlayBoundingBox = customView.detectionOverlayLayer.path!.boundingBox
             if detectionOverlayBoundingBox.contains(faceBoundingBoxOnScreen), faceBoundingBoxOnScreen.isAlmostCentered(in: detectionOverlayBoundingBox, withTolerance: 25) {
                 customView.updateDetectionOverlayLayer(strokeColor: UIColor.green.cgColor)
-                Task {
-                   await viewModel.saveFaceImage(pixelBuffer: pixelBuffer, detectionOverlayLayerBoundingBox: detectionOverlayBoundingBox, previewLayer: customView.videoPreviewLayer)
-                }
+                viewModel.saveFaceImage(pixelBuffer: pixelBuffer, detectionOverlayLayerBoundingBox: detectionOverlayBoundingBox, previewLayer: customView.videoPreviewLayer)
             }
         }
     }

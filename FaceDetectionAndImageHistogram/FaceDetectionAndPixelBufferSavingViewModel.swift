@@ -11,7 +11,7 @@ import Combine
 
 protocol FaceDetectionAndPixelBufferSavingViewModelProtocol: FaceDetectionViewModelGeneralProtocol {
     func setupVideoOutput(delegate: AVCaptureVideoDataOutputSampleBufferDelegate)
-    func saveFaceImage(pixelBuffer: CVPixelBuffer, detectionOverlayLayerBoundingBox: CGRect, previewLayer: AVCaptureVideoPreviewLayer) async
+    func saveFaceImage(pixelBuffer: CVPixelBuffer, detectionOverlayLayerBoundingBox: CGRect, previewLayer: AVCaptureVideoPreviewLayer)
 }
 
 class FaceDetectionAndPixelBufferSavingViewModel: FaceDetectionViewModel, FaceDetectionAndPixelBufferSavingViewModelProtocol {
@@ -42,7 +42,7 @@ class FaceDetectionAndPixelBufferSavingViewModel: FaceDetectionViewModel, FaceDe
         connection.videoOrientation = .portrait
     }
     
-    func saveFaceImage(pixelBuffer: CVPixelBuffer, detectionOverlayLayerBoundingBox: CGRect, previewLayer: AVCaptureVideoPreviewLayer) async {
+    func saveFaceImage(pixelBuffer: CVPixelBuffer, detectionOverlayLayerBoundingBox: CGRect, previewLayer: AVCaptureVideoPreviewLayer) {
         guard self.takenFaceImage == nil else { return }
         
         let ciImage = CIImage(cvPixelBuffer: pixelBuffer)

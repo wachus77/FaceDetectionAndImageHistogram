@@ -109,8 +109,6 @@ extension FaceDetectionAndCapturePhotoSavingViewController: AVCapturePhotoCaptur
             print("Error capturing photo: \(String(describing: error))")
             return
         }
-        Task {
-            await viewModel.handleTakenPhoto(photo: photo)
-        }
+        viewModel.handleTakenPhoto(photo: photo)
     }
 }
