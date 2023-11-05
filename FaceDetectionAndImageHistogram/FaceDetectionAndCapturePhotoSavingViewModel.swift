@@ -11,7 +11,7 @@ protocol FaceDetectionAndCapturePhotoSavingViewModelProtocol: FaceDetectionViewM
     func setupPhotoOutput()
     func setupVideoOutput(delegate: AVCaptureVideoDataOutputSampleBufferDelegate)
     func takePicture(delegate: AVCapturePhotoCaptureDelegate)
-    func handleTakenPhoto(photo: AVCapturePhoto)
+    func handleTakenPhoto(photo: AVCapturePhoto) async
 }
 
 class FaceDetectionAndCapturePhotoSavingViewModel: FaceDetectionAndPixelBufferSavingViewModel, FaceDetectionAndCapturePhotoSavingViewModelProtocol {
@@ -37,7 +37,7 @@ class FaceDetectionAndCapturePhotoSavingViewModel: FaceDetectionAndPixelBufferSa
         photoDataOutput.capturePhoto(with: settings, delegate: delegate)
     }
     
-    func handleTakenPhoto(photo: AVCapturePhoto) {
+    func handleTakenPhoto(photo: AVCapturePhoto) async {
         guard self.takenFaceImage == nil else { return }
         guard let imageData = photo.fileDataRepresentation() else { return }
         guard let image = UIImage(data: imageData) else { return }
