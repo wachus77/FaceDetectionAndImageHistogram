@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		089C9C372AF651D300D68756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C9C362AF651D300D68756 /* AppDelegate.swift */; };
+		089C9C392AF651D300D68756 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C9C382AF651D300D68756 /* SceneDelegate.swift */; };
+		089C9C402AF651D400D68756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 089C9C3F2AF651D400D68756 /* Assets.xcassets */; };
+		089C9C432AF651D400D68756 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 089C9C412AF651D400D68756 /* LaunchScreen.storyboard */; };
+		08FC785E2AF6A5EF00941AF0 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FC785D2AF6A5EF00941AF0 /* opencv2.framework */; };
+		08FC78622AF6A6B200941AF0 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 08FC78612AF6A6B200941AF0 /* OpenCVWrapper.mm */; };
+		08FC78652AF6B1EA00941AF0 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC78642AF6B1EA00941AF0 /* ImageViewController.swift */; };
+		08FC78672AF78E8E00941AF0 /* FaceDetectionAndPixelBufferSavingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC78662AF78E8E00941AF0 /* FaceDetectionAndPixelBufferSavingViewModel.swift */; };
+		08FC78692AF78EE200941AF0 /* FaceDetectionAndPixelBufferSavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC78682AF78EE200941AF0 /* FaceDetectionAndPixelBufferSavingViewController.swift */; };
+		08FC786B2AF7A19B00941AF0 /* FaceDetectionAndCapturePhotoSavingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC786A2AF7A19B00941AF0 /* FaceDetectionAndCapturePhotoSavingViewModel.swift */; };
+		08FC786D2AF7A2DF00941AF0 /* FaceDetectionAndCapturePhotoSavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC786C2AF7A2DF00941AF0 /* FaceDetectionAndCapturePhotoSavingViewController.swift */; };
+		08FC78712AF7A8A400941AF0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC78702AF7A8A400941AF0 /* BaseViewController.swift */; };
+		08FC78732AF7A8C400941AF0 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC78722AF7A8C400941AF0 /* BaseView.swift */; };
+		08FC78762AF7A90600941AF0 /* ViewSetupable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC78752AF7A90600941AF0 /* ViewSetupable.swift */; };
+		08FC78782AF7A95F00941AF0 /* AppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC78772AF7A95F00941AF0 /* AppFlowController.swift */; };
+		08FC787B2AF7A9A100941AF0 /* AppFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC787A2AF7A9A100941AF0 /* AppFoundation.swift */; };
+		08FC787D2AF7A9E600941AF0 /* DefaultAppFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC787C2AF7A9E600941AF0 /* DefaultAppFoundation.swift */; };
+		08FC787F2AF7B65200941AF0 /* FaceDetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC787E2AF7B65200941AF0 /* FaceDetectionView.swift */; };
+		08FC78812AF7BA2B00941AF0 /* FaceDetectionViewModelGeneralProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC78802AF7BA2B00941AF0 /* FaceDetectionViewModelGeneralProtocol.swift */; };
+		08FC78832AF7BCCB00941AF0 /* FaceDetectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC78822AF7BCCB00941AF0 /* FaceDetectionViewModel.swift */; };
+		08FC78872AF7CC2E00941AF0 /* CGRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FC78862AF7CC2E00941AF0 /* CGRect+Extensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		089C9C332AF651D300D68756 /* FaceDetectionAndImageHistogram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceDetectionAndImageHistogram.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		089C9C362AF651D300D68756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		089C9C382AF651D300D68756 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		089C9C3F2AF651D400D68756 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		089C9C422AF651D400D68756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		089C9C442AF651D400D68756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08FC785D2AF6A5EF00941AF0 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		08FC785F2AF6A6B200941AF0 /* FaceDetectionAndImageHistogram-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FaceDetectionAndImageHistogram-Bridging-Header.h"; sourceTree = "<group>"; };
+		08FC78602AF6A6B200941AF0 /* OpenCVWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
+		08FC78612AF6A6B200941AF0 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
+		08FC78642AF6B1EA00941AF0 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		08FC78662AF78E8E00941AF0 /* FaceDetectionAndPixelBufferSavingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetectionAndPixelBufferSavingViewModel.swift; sourceTree = "<group>"; };
+		08FC78682AF78EE200941AF0 /* FaceDetectionAndPixelBufferSavingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetectionAndPixelBufferSavingViewController.swift; sourceTree = "<group>"; };
+		08FC786A2AF7A19B00941AF0 /* FaceDetectionAndCapturePhotoSavingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetectionAndCapturePhotoSavingViewModel.swift; sourceTree = "<group>"; };
+		08FC786C2AF7A2DF00941AF0 /* FaceDetectionAndCapturePhotoSavingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetectionAndCapturePhotoSavingViewController.swift; sourceTree = "<group>"; };
+		08FC78702AF7A8A400941AF0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		08FC78722AF7A8C400941AF0 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		08FC78752AF7A90600941AF0 /* ViewSetupable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSetupable.swift; sourceTree = "<group>"; };
+		08FC78772AF7A95F00941AF0 /* AppFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowController.swift; sourceTree = "<group>"; };
+		08FC787A2AF7A9A100941AF0 /* AppFoundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFoundation.swift; sourceTree = "<group>"; };
+		08FC787C2AF7A9E600941AF0 /* DefaultAppFoundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAppFoundation.swift; sourceTree = "<group>"; };
+		08FC787E2AF7B65200941AF0 /* FaceDetectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetectionView.swift; sourceTree = "<group>"; };
+		08FC78802AF7BA2B00941AF0 /* FaceDetectionViewModelGeneralProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetectionViewModelGeneralProtocol.swift; sourceTree = "<group>"; };
+		08FC78822AF7BCCB00941AF0 /* FaceDetectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetectionViewModel.swift; sourceTree = "<group>"; };
+		08FC78842AF7C11A00941AF0 /* OpenCVWrapperProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapperProtocol.h; sourceTree = "<group>"; };
+		08FC78862AF7CC2E00941AF0 /* CGRect+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Extensions.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		089C9C302AF651D300D68756 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08FC785E2AF6A5EF00941AF0 /* opencv2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C9C2A2AF651D300D68756 = {
+			isa = PBXGroup;
+			children = (
+				089C9C352AF651D300D68756 /* FaceDetectionAndImageHistogram */,
+				089C9C342AF651D300D68756 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		089C9C342AF651D300D68756 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				089C9C332AF651D300D68756 /* FaceDetectionAndImageHistogram.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		089C9C352AF651D300D68756 /* FaceDetectionAndImageHistogram */ = {
+			isa = PBXGroup;
+			children = (
+				08FC785F2AF6A6B200941AF0 /* FaceDetectionAndImageHistogram-Bridging-Header.h */,
+				08FC78602AF6A6B200941AF0 /* OpenCVWrapper.h */,
+				08FC78842AF7C11A00941AF0 /* OpenCVWrapperProtocol.h */,
+				08FC78612AF6A6B200941AF0 /* OpenCVWrapper.mm */,
+				089C9C442AF651D400D68756 /* Info.plist */,
+				08FC786C2AF7A2DF00941AF0 /* FaceDetectionAndCapturePhotoSavingViewController.swift */,
+				08FC786A2AF7A19B00941AF0 /* FaceDetectionAndCapturePhotoSavingViewModel.swift */,
+				08FC78682AF78EE200941AF0 /* FaceDetectionAndPixelBufferSavingViewController.swift */,
+				08FC78662AF78E8E00941AF0 /* FaceDetectionAndPixelBufferSavingViewModel.swift */,
+				08FC787E2AF7B65200941AF0 /* FaceDetectionView.swift */,
+				08FC78822AF7BCCB00941AF0 /* FaceDetectionViewModel.swift */,
+				08FC78802AF7BA2B00941AF0 /* FaceDetectionViewModelGeneralProtocol.swift */,
+				08FC78642AF6B1EA00941AF0 /* ImageViewController.swift */,
+				089C9C3F2AF651D400D68756 /* Assets.xcassets */,
+				08FC78792AF7A98F00941AF0 /* Aplication */,
+				08FC78852AF7CC0300941AF0 /* Entensions */,
+				08FC785C2AF6A5D600941AF0 /* Frameworks */,
+				089C9C412AF651D400D68756 /* LaunchScreen.storyboard */,
+				08FC786E2AF7A81200941AF0 /* PresentationModule */,
+			);
+			path = FaceDetectionAndImageHistogram;
+			sourceTree = "<group>";
+		};
+		08FC785C2AF6A5D600941AF0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08FC785D2AF6A5EF00941AF0 /* opencv2.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FC786E2AF7A81200941AF0 /* PresentationModule */ = {
+			isa = PBXGroup;
+			children = (
+				08FC78742AF7A8EC00941AF0 /* Protocols */,
+				08FC786F2AF7A82800941AF0 /* Abstract */,
+			);
+			path = PresentationModule;
+			sourceTree = "<group>";
+		};
+		08FC786F2AF7A82800941AF0 /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				08FC78702AF7A8A400941AF0 /* BaseViewController.swift */,
+				08FC78722AF7A8C400941AF0 /* BaseView.swift */,
+			);
+			path = Abstract;
+			sourceTree = "<group>";
+		};
+		08FC78742AF7A8EC00941AF0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				08FC78752AF7A90600941AF0 /* ViewSetupable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		08FC78792AF7A98F00941AF0 /* Aplication */ = {
+			isa = PBXGroup;
+			children = (
+				089C9C362AF651D300D68756 /* AppDelegate.swift */,
+				08FC78772AF7A95F00941AF0 /* AppFlowController.swift */,
+				08FC787A2AF7A9A100941AF0 /* AppFoundation.swift */,
+				08FC787C2AF7A9E600941AF0 /* DefaultAppFoundation.swift */,
+				089C9C382AF651D300D68756 /* SceneDelegate.swift */,
+			);
+			path = Aplication;
+			sourceTree = "<group>";
+		};
+		08FC78852AF7CC0300941AF0 /* Entensions */ = {
+			isa = PBXGroup;
+			children = (
+				08FC78862AF7CC2E00941AF0 /* CGRect+Extensions.swift */,
+			);
+			path = Entensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		089C9C322AF651D300D68756 /* FaceDetectionAndImageHistogram */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 089C9C472AF651D400D68756 /* Build configuration list for PBXNativeTarget "FaceDetectionAndImageHistogram" */;
+			buildPhases = (
+				089C9C2F2AF651D300D68756 /* Sources */,
+				089C9C302AF651D300D68756 /* Frameworks */,
+				089C9C312AF651D300D68756 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FaceDetectionAndImageHistogram;
+			productName = FaceDetectionAndImageHistogram;
+			productReference = 089C9C332AF651D300D68756 /* FaceDetectionAndImageHistogram.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C9C2B2AF651D300D68756 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					089C9C322AF651D300D68756 = {
+						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
+					};
+				};
+			};
+			buildConfigurationList = 089C9C2E2AF651D300D68756 /* Build configuration list for PBXProject "FaceDetectionAndImageHistogram" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 089C9C2A2AF651D300D68756;
+			productRefGroup = 089C9C342AF651D300D68756 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				089C9C322AF651D300D68756 /* FaceDetectionAndImageHistogram */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		089C9C312AF651D300D68756 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				089C9C432AF651D400D68756 /* LaunchScreen.storyboard in Resources */,
+				089C9C402AF651D400D68756 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		089C9C2F2AF651D300D68756 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08FC78812AF7BA2B00941AF0 /* FaceDetectionViewModelGeneralProtocol.swift in Sources */,
+				08FC78872AF7CC2E00941AF0 /* CGRect+Extensions.swift in Sources */,
+				08FC78622AF6A6B200941AF0 /* OpenCVWrapper.mm in Sources */,
+				089C9C372AF651D300D68756 /* AppDelegate.swift in Sources */,
+				08FC787D2AF7A9E600941AF0 /* DefaultAppFoundation.swift in Sources */,
+				08FC78762AF7A90600941AF0 /* ViewSetupable.swift in Sources */,
+				08FC78782AF7A95F00941AF0 /* AppFlowController.swift in Sources */,
+				08FC786D2AF7A2DF00941AF0 /* FaceDetectionAndCapturePhotoSavingViewController.swift in Sources */,
+				08FC78692AF78EE200941AF0 /* FaceDetectionAndPixelBufferSavingViewController.swift in Sources */,
+				08FC78672AF78E8E00941AF0 /* FaceDetectionAndPixelBufferSavingViewModel.swift in Sources */,
+				08FC78712AF7A8A400941AF0 /* BaseViewController.swift in Sources */,
+				08FC787B2AF7A9A100941AF0 /* AppFoundation.swift in Sources */,
+				08FC78652AF6B1EA00941AF0 /* ImageViewController.swift in Sources */,
+				08FC78832AF7BCCB00941AF0 /* FaceDetectionViewModel.swift in Sources */,
+				08FC787F2AF7B65200941AF0 /* FaceDetectionView.swift in Sources */,
+				08FC78732AF7A8C400941AF0 /* BaseView.swift in Sources */,
+				089C9C392AF651D300D68756 /* SceneDelegate.swift in Sources */,
+				08FC786B2AF7A19B00941AF0 /* FaceDetectionAndCapturePhotoSavingViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C9C412AF651D400D68756 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C9C422AF651D400D68756 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		089C9C452AF651D400D68756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		089C9C462AF651D400D68756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		089C9C482AF651D400D68756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RVW9RYSPFZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FaceDetectionAndImageHistogram/Frameworks",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FaceDetectionAndImageHistogram/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires a feed from the selfie cam, so it can track your face.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = ss;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.soluty.FaceDetectionAndImageHistogram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "FaceDetectionAndImageHistogram/FaceDetectionAndImageHistogram-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		089C9C492AF651D400D68756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RVW9RYSPFZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FaceDetectionAndImageHistogram/Frameworks",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FaceDetectionAndImageHistogram/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires a feed from the selfie cam, so it can track your face.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = ss;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.soluty.FaceDetectionAndImageHistogram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "FaceDetectionAndImageHistogram/FaceDetectionAndImageHistogram-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		089C9C2E2AF651D300D68756 /* Build configuration list for PBXProject "FaceDetectionAndImageHistogram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				089C9C452AF651D400D68756 /* Debug */,
+				089C9C462AF651D400D68756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		089C9C472AF651D400D68756 /* Build configuration list for PBXNativeTarget "FaceDetectionAndImageHistogram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				089C9C482AF651D400D68756 /* Debug */,
+				089C9C492AF651D400D68756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C9C2B2AF651D300D68756 /* Project object */;
+}
