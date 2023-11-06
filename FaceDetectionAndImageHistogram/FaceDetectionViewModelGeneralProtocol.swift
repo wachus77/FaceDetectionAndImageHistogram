@@ -19,5 +19,6 @@ protocol FaceDetectionViewModelGeneralProtocol {
     func setupCameraInput()
     func startRunningCaptureSession()
     func detectFace(pixelBuffer: CVPixelBuffer)
+    func updateFacePositionCorrectness(isCorrect: Bool)
     func clearCaptureSession()
 }

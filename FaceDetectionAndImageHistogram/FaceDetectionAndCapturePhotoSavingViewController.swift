@@ -80,7 +80,9 @@ class FaceDetectionAndCapturePhotoSavingViewController: BaseViewController<FaceD
             let detectionOverlayBoundingBox = customView.detectionOverlayLayer.path!.boundingBox
             if detectionOverlayBoundingBox.contains(faceBoundingBoxOnScreen), faceBoundingBoxOnScreen.isAlmostCentered(in: detectionOverlayBoundingBox, withTolerance: 25) {
                 customView.updateDetectionOverlayLayer(strokeColor: UIColor.green.cgColor)
+                viewModel.updateFacePositionCorrectness(isCorrect: true)
                 viewModel.takePicture(delegate: self)
+                return
             }
         }
     }

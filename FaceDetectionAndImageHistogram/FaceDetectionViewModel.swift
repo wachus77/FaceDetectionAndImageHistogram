@@ -13,6 +13,7 @@ class FaceDetectionViewModel: FaceDetectionViewModelGeneralProtocol {
     
     // MARK: - Properties
     
+    private var isFacePositionCorrect: Bool = false
     let openCVService: OpenCVWrapperProtocol
     let captureSession = AVCaptureSession()
     var takenFaceImage: UIImage?
@@ -48,7 +49,9 @@ class FaceDetectionViewModel: FaceDetectionViewModelGeneralProtocol {
     }
     
     func detectFace(pixelBuffer: CVPixelBuffer) {
+        if isFacePositionCorrect { return }
         let faceDetectionRequest = VNDetectFaceRectanglesRequest { [weak self] request, error in
+            if self?.isFacePositionCorrect == true { return }
             if let error = error {
                 self?.errorPublisher.send(error)
                 return
@@ -59,11 +62,16 @@ class FaceDetectionViewModel: FaceDetectionViewModelGeneralProtocol {
         }
         
         let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .leftMirrored, options: [:])
+        
         do {
             try imageRequestHandler.perform([faceDetectionRequest])
         } catch {
             errorPublisher.send(error)
         }
+    }
+    
+    func updateFacePositionCorrectness(isCorrect: Bool) {
+        isFacePositionCorrect = isCorrect
     }
     
     func clearCaptureSession() {
